@@ -1,0 +1,128 @@
+{
+  "data": {
+    "tickers": [
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "AVGO",
+      "CRM",
+      "ADBE",
+      "ORCL",
+      "GOOGL",
+      "META",
+      "JPM",
+      "BAC",
+      "V",
+      "MA",
+      "GS",
+      "JNJ",
+      "UNH",
+      "LLY",
+      "PFE",
+      "ABBV",
+      "AMZN",
+      "TSLA",
+      "HD",
+      "MCD",
+      "PG",
+      "KO",
+      "WMT",
+      "PEP",
+      "XOM",
+      "CVX",
+      "CAT",
+      "HON",
+      "UPS",
+      "BA",
+      "NEE",
+      "DUK",
+      "AMT",
+      "LIN"
+    ],
+    "n_tickers": 37,
+    "start": "2019-01-02",
+    "end": "2026-09-30",
+    "n_days": 1947
+  },
+  "ledoit_wolf_shrinkage": 0.01795234955402989,
+  "in_sample": {
+    "max_sharpe": {
+      "return": 0.25615209675511247,
+      "volatility": 0.1881109778301164,
+      "sharpe": 1.3617073267592295
+    },
+    "min_variance": {
+      "return": 0.11563653169615891,
+      "volatility": 0.1472251390982217,
+      "sharpe": 0.785440125269718
+    },
+    "frontier_build_seconds": 0.6026429550001922
+  },
+  "solver_comparison": {
+    "min_var_weight_l2": 5.217713534624875e-06,
+    "min_var_weight_linf": 3.3723622005119545e-06,
+    "min_var_cvxpy_s": 0.020680833000369603,
+    "min_var_scipy_s": 0.2798476930001925,
+    "max_sharpe_weight_l2": 4.179164682243314e-07,
+    "max_sharpe_cvxpy_s": 0.02150782600074308,
+    "max_sharpe_scipy_s": 0.15385075000085635
+  },
+  "shrinkage_study": {
+    "realized_vol_sample_cov": 0.11451477594261246,
+    "realized_vol_ledoit_wolf": 0.11452264214992229,
+    "note": "min-var weights fit on 1st half, realized vol on 2nd half"
+  },
+  "backtest": {
+    "config": {
+      "min_lookback_days": 504,
+      "rebalance": "ME",
+      "transaction_cost_bps": 10.0,
+      "risk_free": 0.0,
+      "max_weight": 0.1,
+      "sector_cap": 0.35,
+      "protocol": "expanding window, no look-ahead; costs as one-time equity hit on rebalance dates"
+    },
+    "strategies": {
+      "MaxSharpe_LW": {
+        "cagr": 0.1835267231054558,
+        "volatility": 0.17349128470742065,
+        "sharpe": 1.0581379266051127,
+        "max_drawdown": -0.23795556322976968,
+        "n_days": 1423,
+        "final_equity": 2.5895468648542352,
+        "total_cost_drag": 0.00702119889831005,
+        "n_rebalances": 69
+      },
+      "MinVar_Sample": {
+        "cagr": 0.11460656830139082,
+        "volatility": 0.11704027380021102,
+        "sharpe": 0.9857741060057115,
+        "max_drawdown": -0.13555480332126227,
+        "n_days": 1423,
+        "final_equity": 1.8453869126530382,
+        "total_cost_drag": 0.00201217475251515,
+        "n_rebalances": 69
+      },
+      "EqualWeight": {
+        "cagr": 0.16487653788058654,
+        "volatility": 0.1440141809593135,
+        "sharpe": 1.1319517545894675,
+        "max_drawdown": -0.18111048293188958,
+        "n_days": 1423,
+        "final_equity": 2.3673965582752263,
+        "total_cost_drag": 0.002351801796789596,
+        "n_rebalances": 69
+      },
+      "SPY_BuyHold": {
+        "cagr": 0.17243517198630598,
+        "volatility": 0.19242158947371166,
+        "sharpe": 0.9234356246077718,
+        "max_drawdown": -0.33717263786002866,
+        "n_days": 1946,
+        "final_equity": 3.4160118077932116,
+        "total_cost_drag": 0.0,
+        "n_rebalances": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Data (re-downloadable; see data/README.md)
+data/*.csv
+!data/README.md
+!data/.gitkeep
+
+# Results are generated artifacts (metrics.json kept as the record)
+results/figures/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

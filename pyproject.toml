@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "convex-portfolio-optimization"
+version = "0.1.0"
+description = "Mean-variance portfolio optimization with real-world constraints: convex QP via cvxpy and scipy, Ledoit-Wolf shrinkage, honest out-of-sample backtest."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    # pinned in requirements.txt; kept loose here for library use
+    "numpy",
+    "pandas",
+    "scipy",
+    "cvxpy",
+    "scikit-learn",
+    "matplotlib",
+    "yfinance",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
